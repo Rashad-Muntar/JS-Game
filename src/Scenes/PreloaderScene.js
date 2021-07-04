@@ -22,7 +22,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('platform', 'platform.png');
     this.load.image('player', 'player.gif')
     this.load.image('coin', 'coin.png')
-    
+
     // display progress bar
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
