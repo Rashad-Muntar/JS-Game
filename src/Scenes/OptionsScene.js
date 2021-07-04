@@ -32,6 +32,11 @@ export default class OptionsScene extends Phaser.Scene {
     this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
 
     this.updateAudio();
+
+    this.gameButton = btn(this, 300, 500, 'Play', 35);
+    this.gameButton.on('pointerdown', () => {
+      this.scene.start('Game');
+    });
   }
 
   updateAudio() {

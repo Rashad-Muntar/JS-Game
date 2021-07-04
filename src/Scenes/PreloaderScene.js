@@ -18,10 +18,10 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     // loading images
-    this.load.image('sky', 'sky.png')
-    this.load.image('platform', 'platform.png');
-    this.load.image('player', 'player.gif')
-    this.load.image('coin', 'coin.png')
+    this.load.image('sky', 'assets/sky.png')
+    this.load.image('platform', 'assets/platform.png');
+    this.load.image('player', 'assets/player.gif')
+    this.load.image('coin', 'assets/coin.png')
 
     // display progress bar
     const progressBar = this.add.graphics();
