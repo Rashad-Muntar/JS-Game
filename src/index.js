@@ -1,26 +1,36 @@
-import 'phaser';
-import config from './Config/config';
-import GameScene from './Scenes/GameScene';
-import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import TitleScene from './Scenes/TitleScene';
-import OptionsScene from './Scenes/OptionsScene';
-import CreditsScene from './Scenes/CreditsScene';
-import Model from './Model';
+import { SceneMain } from './scenes/sceneMain';
+import { SceneLoad } from './scenes/sceneLoad';
+import { SceneTitle } from './scenes/sceneTitle';
+import { SceneOver } from './scenes/sceneOver';
+import { SceneLeaderboard } from './scenes/sceneLeaderboard';
+import { SceneInstructions } from './scenes/sceneInstructions';
 
-class Game extends Phaser.Game {
-  constructor () {
-    super(config);
-    const model = new Model();
-    this.globals = { model, bgMusic: null };
-    this.scene.add('Boot', BootScene);
-    this.scene.add('Preloader', PreloaderScene);
-    this.scene.add('Title', TitleScene);
-    this.scene.add('Options', OptionsScene);
-    this.scene.add('Credits', CreditsScene);
-    this.scene.add('Game', GameScene);
-    this.scene.start('Boot');
-  }
+let isMobile = navigator.userAgent.indexOf('Mobile');
+if (isMobile === -1) {
+  isMobile = navigator.userAgent.indexOf('Tablet');
 }
-
-window.game = new Game();
+let w = 800;
+let h = 640;
+if (isMobile !== -1) {
+  w = window.innerWidth;
+  h = window.innerHeight;
+}
+const config = {
+  // eslint-disable-next-line no-undef
+  type: Phaser.AUTO,
+  width: w,
+  height: h,
+  parent: 'phaser-game',
+  scene: [SceneLoad, SceneTitle, SceneMain, SceneOver, SceneLeaderboard, SceneInstructions],
+  physics: {
+    default: 'arcade',
+    arcade: {
+      debug: false,
+    },
+  },
+  dom: {
+    createContainer: true,
+  },
+};
+// eslint-disable-next-line no-unused-vars, no-undef
+const game = new Phaser.Game(config);

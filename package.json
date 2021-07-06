@@ -1,34 +1,67 @@
 {
-  "name": "phaser3-project-template-3",
-  "version": "1.0.0",
-  "description": "A Phaser 3 Project Template",
+  "name": "shootergame",
+  "version": "1.1.0",
+  "description": "Phaser 3 shooter game",
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ],
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "npm run build && webpack-dev-server --port=8000"
+    "heroku-prebuild": "npm install --dev",
+    "build": "webpack --config webpack/prod.js ",
+    "start": "npm run build && webpack-dev-server --config webpack/base.js --host=0.0.0.0 --port=$PORT --disable-host-check --open",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://scottwestover@bitbucket.org/creativerendering/phaser3-template.git"
+    "url": "git+https://github.com/Stricks1/shooterGame.git"
   },
+  "author": "Gabriel Malheiros Silveira <gmalheiross@gmail.com>",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-project-template/issues"
+    "url": "https://github.com/Stricks1/shooterGame.git/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+  "homepage": "https://github.com/Stricks1/shooterGame.git#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/test/mocks/styleMock.js",
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/mocks/fileMock.js"
+    }
+  },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.30.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "phaser": "^3.3.0",
-    "raw-loader": "^0.5.1",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.19.0",
-    "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.11.0"
-  }
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "file-loader": "^4.3.0",
+    "jest": "^26.4.2",
+    "jest-canvas-mock": "^2.2.0",
+    "raw-loader": "^3.1.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^3.2.0",
+    "phaser": "^3.20.1",
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "heroku-run-build-script": true
 }
