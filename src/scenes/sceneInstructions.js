@@ -1,4 +1,4 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import { Align } from '../common/util/align';
 import Button from '../common/ui/button';
 import hero from '../../assets/images/bobHero.png';
@@ -10,7 +10,7 @@ import enemyshoot from '../../assets/images/light.png';
 import agroFish from '../../assets/images/agroFish.png';
 import seaHorse from '../../assets/images/seaHorse.png';
 // eslint-disable-next-line import/prefer-default-export
-export class SceneInstructions extends BaseScene {
+export class SceneInstructions extends BootScene {
   constructor() {
     super('SceneInstructions');
   }
@@ -110,7 +110,7 @@ export class SceneInstructions extends BaseScene {
       'btn1',
       'btnH1',
       'Back to Menu',
-      'SceneTitle',
+      'TitleScene',
       true,
     );
     this.aGrid.placeAtIndex(104, this.returnBtn);

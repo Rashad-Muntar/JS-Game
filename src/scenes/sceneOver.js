@@ -1,14 +1,13 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import { Align } from '../common/util/align';
 import { FormUtil } from '../common/util/formUtil';
 import FormScore from '../common/comps/formScore';
 import Button from '../common/ui/button';
 import ButtonScore from '../common/ui/buttonSendScore';
 import chest from '../../assets/images/chest.png';
-import agroFish from '../../assets/images/agroFish.png';
 
 // eslint-disable-next-line import/prefer-default-export
-export class SceneOver extends BaseScene {
+export class SceneOver extends BootScene {
   constructor() {
     super('SceneOver');
   }
@@ -16,7 +15,6 @@ export class SceneOver extends BaseScene {
   // eslint-disable-next-line class-methods-use-this
   preload() {
     this.load.image('chest', chest);
-    this.load.spritesheet('agrofish', agroFish, { frameWidth: 30, frameHeight: 26 });
   }
 
   create(score) {
@@ -53,17 +51,7 @@ export class SceneOver extends BaseScene {
       this.aGrid.placeAtIndex(38, chest);
       Align.scaleToGameW(chest, 0.3, this);
     } else {
-      this.placeText('You Lose', 16, 'TITLE_TEXT');
-      this.anims.create({
-        key: 'agrofish',
-        frames: this.anims.generateFrameNumbers('agrofish', { start: 8, end: 9 }),
-        frameRate: 1,
-        repeat: -1,
-      });
-      const agrofish = this.physics.add.sprite(0, 0, 'agrofish');
-      this.aGrid.placeAtIndex(38, agrofish);
-      agrofish.anims.play('agrofish', true);
-      Align.scaleToGameW(agrofish, 0.18, this);
+      this.placeText('You were very close', 27, 'TITLE_TEXT');
     }
 
     this.placeText('SCORE', 82, 'BLACK2');
@@ -73,7 +61,7 @@ export class SceneOver extends BaseScene {
       'btn1',
       'btnH1',
       'Back to Menu',
-      'SceneTitle',
+      'TitleScene',
     );
     this.aGrid.placeAtIndex(104, this.returnBtn);
     this.makeUi();
@@ -85,7 +73,7 @@ export class SceneOver extends BaseScene {
   }
 
   playAgain() {
-    this.scene.start('SceneMain');
+    this.scene.start('GameScene');
   }
 
   // eslint-disable-next-line class-methods-use-this

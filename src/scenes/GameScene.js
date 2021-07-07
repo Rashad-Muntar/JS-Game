@@ -1,4 +1,4 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import { Align } from '../common/util/align';
 import bgr1 from '../../assets/images/far.png';
 import bgr2 from '../../assets/images/sand.png';
@@ -40,9 +40,9 @@ import { Clock } from '../common/comps/clock';
 /* eslint-disable no-undef */
 /* eslint-disable class-methods-use-this */
 // eslint-disable-next-line import/prefer-default-export
-export class SceneMain extends BaseScene {
+export class GameScene extends BootScene {
   constructor() {
-    super('SceneMain');
+    super('GameScene');
   }
 
   preload() {
@@ -414,7 +414,6 @@ export class SceneMain extends BaseScene {
     agro.body.setSize(agro.width, agro.height / 1.35, false);
   }
 
-
   createSeaHorse(place) {
     const seaHorse = new SeaHorse(this, 0, 0, 'seaHorse');
     this.seaHorsesGroup.add(seaHorse);
@@ -424,7 +423,6 @@ export class SceneMain extends BaseScene {
     this.blockGrid.placeAtIndex(place, seaHorse);
     Align.scaleToGameW(seaHorse, 0.025, this);
   }
-
 
   backGroundAlign(totalWidth, texture, texture2, scrollFactor) {
     const w = this.textures.get(texture).getSourceImage().width;

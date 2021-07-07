@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-import { SceneMain } from '../../src/scenes/sceneMain';
-import { SceneLoad } from '../../src/scenes/sceneLoad';
-import { SceneTitle } from '../../src/scenes/sceneTitle';
+import { GameScene } from '../../src/scenes/GameScene';
+import { PreLoader } from '../../src/scenes/PreLoader';
+import { TitleScene } from '../../src/scenes/TitleScene';
 import { SceneOver } from '../../src/scenes/sceneOver';
 import { SceneLeaderboard } from '../../src/scenes/sceneLeaderboard';
 import { SceneInstructions } from '../../src/scenes/sceneInstructions';
@@ -13,7 +13,7 @@ const game = (() => {
     width: 800,
     height: 640,
     parent: 'phaser-game',
-    scene: [SceneLoad, SceneTitle, SceneMain, SceneOver, SceneLeaderboard, SceneInstructions],
+    scene: [PreLoader, TitleScene, GameScene, SceneOver, SceneLeaderboard, SceneInstructions],
     physics: {
       default: 'arcade',
       arcade: {

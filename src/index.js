@@ -1,6 +1,6 @@
-import { SceneMain } from './scenes/sceneMain';
-import { SceneLoad } from './scenes/sceneLoad';
-import { SceneTitle } from './scenes/sceneTitle';
+import { GameScene } from './scenes/GameScene';
+import { PreLoader } from './scenes/PreLoader';
+import { TitleScene } from './scenes/TitleScene';
 import { SceneOver } from './scenes/sceneOver';
 import { SceneLeaderboard } from './scenes/sceneLeaderboard';
 import { SceneInstructions } from './scenes/sceneInstructions';
@@ -21,7 +21,7 @@ const config = {
   width: w,
   height: h,
   parent: 'phaser-game',
-  scene: [SceneLoad, SceneTitle, SceneMain, SceneOver, SceneLeaderboard, SceneInstructions],
+  scene: [PreLoader, TitleScene, GameScene, SceneOver, SceneLeaderboard, SceneInstructions],
   physics: {
     default: 'arcade',
     arcade: {

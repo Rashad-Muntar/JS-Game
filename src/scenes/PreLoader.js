@@ -1,13 +1,13 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import { Bar } from '../common/comps/bar';
 import { Align } from '../common/util/align';
 import btn1 from '../../assets/images/ui/buttons/1/2.png';
 import btnH1 from '../../assets/images/ui/buttons/2/2.png';
 
 // eslint-disable-next-line import/prefer-default-export
-export class SceneLoad extends BaseScene {
+export class PreLoader extends BootScene {
   constructor() {
-    super('SceneLoad');
+    super('PreLoader');
   }
 
   preload() {
@@ -69,7 +69,7 @@ export class SceneLoad extends BaseScene {
   }
 
   create() {
-    this.scene.start('SceneTitle');
+    this.scene.start('TitleScene');
   }
 
   loadButton(key, style, number) {

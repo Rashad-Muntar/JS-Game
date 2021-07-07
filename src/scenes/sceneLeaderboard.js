@@ -1,11 +1,11 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import { Align } from '../common/util/align';
 import Button from '../common/ui/button';
 import Api from '../common/util/api';
 import loading from '../../assets/images/loadImg.png';
 
 // eslint-disable-next-line import/prefer-default-export
-export class SceneLeaderboard extends BaseScene {
+export class SceneLeaderboard extends BootScene {
   constructor() {
     super('SceneLeaderboard');
   }
@@ -23,7 +23,7 @@ export class SceneLeaderboard extends BaseScene {
     const whiteBg = this.add.image(0, 0, 'panelBack');
     Align.scaleToGameW(whiteBg, 0.9, this);
     this.aGrid.placeAtIndex(60, whiteBg);
-    this.placeText('LEADERBOARD', 16, 'TITLE_TEXT');
+    this.placeText('TOP GAMERS', 16, 'TITLE_TEXT');
 
     const loading = this.physics.add.sprite(0, 0, 'loading');
     this.anims.create({
@@ -72,7 +72,7 @@ export class SceneLeaderboard extends BaseScene {
       'btn1',
       'btnH1',
       'Back to Menu',
-      'SceneTitle',
+      'TitleScene',
       true,
     );
     this.aGrid.placeAtIndex(93, this.returnBtn);

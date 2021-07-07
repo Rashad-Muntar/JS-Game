@@ -60,7 +60,6 @@ export class Light extends CharObject {
   }
 }
 
-
 export class Bubble extends CharObject {
   constructor(scene, x, y, key) {
     super(scene, x, y, key);
@@ -172,7 +171,6 @@ export class Dolphin extends CharObject {
   }
 }
 
-
 export class Whale extends CharObject {
   constructor(scene, x, y, key) {
     super(scene, x, y, key);
@@ -217,7 +215,6 @@ export class Whale extends CharObject {
     });
   }
 }
-
 
 export class Jelly extends CharObject {
   constructor(scene, x, y, key) {

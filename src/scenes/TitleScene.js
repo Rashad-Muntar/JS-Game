@@ -1,9 +1,9 @@
-import { BaseScene } from './baseScene';
+import { BootScene } from './BootScene';
 import Button from '../common/ui/button';
 // eslint-disable-next-line import/prefer-default-export
-export class SceneTitle extends BaseScene {
+export class TitleScene extends BootScene {
   constructor() {
-    super('SceneTitle');
+    super('TitleScene');
   }
 
   preload() {
@@ -16,14 +16,14 @@ export class SceneTitle extends BaseScene {
     this.mm.setBackgroundMusic('underwater');
     this.setBackground('seaBg');
     this.makeAlignGrid(11, 11);
-    this.placeText('Pacific Treasures', 27, 'TITLE_TEXT');
+    this.placeText('THE WATERS', 27, 'TITLE_TEXT');
 
     this.startGame = new Button(
       this,
       'btn1',
       'btnH1',
       'Play Game',
-      'SceneMain',
+      'GameScene',
     );
     this.aGrid.placeAtIndex(49, this.startGame);
 

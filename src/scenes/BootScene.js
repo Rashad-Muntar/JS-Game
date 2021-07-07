@@ -11,7 +11,7 @@ import { SoundPanel } from '../common/ui/soundPanel';
 import { MediaManager } from '../common/util/mediaManager';
 
 // eslint-disable-next-line import/prefer-default-export
-export class BaseScene extends Phaser.Scene {
+export class BootScene extends Phaser.Scene {
   // eslint-disable-next-line no-useless-constructor
   constructor(key) {
     super(key);
