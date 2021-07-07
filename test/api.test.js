@@ -1,6 +1,5 @@
 import * as apiMock from './apiMock';
 
-
 describe('valid game created ', () => {
   const response = { result: 'Leaderboard score created correctly.' };
 

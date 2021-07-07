@@ -87,9 +87,6 @@ export class TextStyles {
             }
         }
         this.styles['TOAST_BAR'] = {
-            shadow: '#000000',
-            stroke: '#ff0000',
-            strokeThick: 4,
             style: {
                 color: '#ffffff',
                 fontSize: TextStyles.SIZE_MED,
