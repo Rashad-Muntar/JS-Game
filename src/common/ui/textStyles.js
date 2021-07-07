@@ -96,20 +96,20 @@ export class TextStyles {
                 fontFamily: TextStyles.MAIN_FONT
             }
         }
-        this.styles['CLOCK'] = {
-            style: {
-                color: '#ffffff',
-                fontSize: TextStyles.SIZE_MED,
-                fontFamily: TextStyles.MAIN_FONT
-            }
-        }
-        this.styles['CLOCK2'] = {
-            style: {
-                color: '#000000',
-                fontSize: TextStyles.SIZE_MED2,
-                fontFamily: TextStyles.MAIN_FONT
-            }
-        }
+        // this.styles['CLOCK'] = {
+        //     style: {
+        //         color: '#ffffff',
+        //         fontSize: TextStyles.SIZE_MED,
+        //         fontFamily: TextStyles.MAIN_FONT
+        //     }
+        // }
+        // this.styles['CLOCK2'] = {
+        //     style: {
+        //         color: '#000000',
+        //         fontSize: TextStyles.SIZE_MED2,
+        //         fontFamily: TextStyles.MAIN_FONT
+        //     }
+        // }
         this.styles['TITLE_TEXT'] = {
             style: {
                 fontFamily: TextStyles.MAIN_FONT,

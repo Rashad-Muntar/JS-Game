@@ -35,7 +35,6 @@ import {
   AgroFish,
   SeaHorse,
 } from '../common/comps/charObjects';
-import { Clock } from '../common/comps/clock';
 
 /* eslint-disable no-undef */
 /* eslint-disable class-methods-use-this */
@@ -352,7 +351,6 @@ export class GameScene extends BootScene {
     this.mm.background.stop();
     if (finish) {
       this.emitter.emit('STOP_TIME');
-      const secounds = this.clock.getClockTime();
       this.scorePoints += 250;
       this.scorePoints += (secounds * 5);
     } else {
@@ -515,15 +513,6 @@ export class GameScene extends BootScene {
 
     this.placeAtIndex(0, this.scoreLabel);
     this.scoreLabel.setScrollFactor(0);
-
-    this.clock = new Clock({
-      scene: this,
-      callback: this.timeUp.bind(this),
-    });
-    this.placeAtIndex(10, this.clock);
-    this.clock.setClock(260);
-    this.clock.startClock();
-    this.clock.setScrollFactor(0);
   }
 
   // eslint-disable-next-line class-methods-use-this

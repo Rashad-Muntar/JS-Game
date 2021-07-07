@@ -8,13 +8,13 @@ export class Bar extends Phaser.GameObjects.Container {
         super(config.scene);
         this.scene = config.scene;
         if (!config.color) {
-            config.color = 0xff0000;
+            config.color = 0x006994;
         }
         if (!config.width) {
-            config.width = 200;
+            config.width = 100;
         }
         if (!config.height) {
-            config.height = config.width / 4;
+            config.height = config.width / 2;
         }
         this.graphics = this.scene.add.graphics();
         this.graphics.fillStyle(config.color, 1);
