@@ -96,28 +96,13 @@ export class TextStyles {
                 fontFamily: TextStyles.MAIN_FONT
             }
         }
-        // this.styles['CLOCK'] = {
-        //     style: {
-        //         color: '#ffffff',
-        //         fontSize: TextStyles.SIZE_MED,
-        //         fontFamily: TextStyles.MAIN_FONT
-        //     }
-        // }
-        // this.styles['CLOCK2'] = {
-        //     style: {
-        //         color: '#000000',
-        //         fontSize: TextStyles.SIZE_MED2,
-        //         fontFamily: TextStyles.MAIN_FONT
-        //     }
-        // }
+
         this.styles['TITLE_TEXT'] = {
             style: {
                 fontFamily: TextStyles.MAIN_FONT,
                 fontSize: TextStyles.SIZE_MED3,
                 color: "red"
             },
-            shadow: "#000000",
-            strokeThickness: 2
         };
         this.styles['POINT_BOX'] = {
             style: {
@@ -125,9 +110,6 @@ export class TextStyles {
                 fontSize: TextStyles.SIZE_LARGE,
                 color: "red"
             },
-            shadow: "#000000",
-            stroke: "#ff0000",
-            strokeThickness: 4
         };
         this.styles['SCORE'] = {
             style: {
