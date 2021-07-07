@@ -9,7 +9,7 @@ export default class ButtonScore extends Phaser.GameObjects.Container {
     this.score = score;
 
     this.button = this.scene.add.sprite(0, 0, key1).setInteractive();
-    this.text = this.scene.add.text(0, 0, 'Send Score', {
+    this.text = this.scene.add.text(0, 0, 'Send your Score', {
       fontSize: '20px',
       fill: '#fff',
     });

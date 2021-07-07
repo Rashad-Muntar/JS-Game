@@ -1,7 +1,7 @@
 import gameMock from './mocks/gameMock';
-import { GameScene } from '../../src/scenes/GameScene';
-import { PreLoader } from '../../src/scenes/PreLoader';
-import { TitleScene } from '../../src/scenes/TitleScene';
+import { GameScene } from '../src/scenes/GameScene';
+import { PreLoader } from '../src/scenes/PreLoader';
+import { TitleScene } from '../src/scenes/TitleScene';
 import { SceneOver } from '../src/scenes/sceneOver';
 import { SceneLeaderboard } from '../src/scenes/sceneLeaderboard';
 import { SceneInstructions } from '../src/scenes/sceneInstructions';

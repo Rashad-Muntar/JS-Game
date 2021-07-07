@@ -28,24 +28,21 @@
   },
   "homepage": "https://github.com/Stricks1/shooterGame.git#readme",
   "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "setupFiles": [
-      "jest-canvas-mock"
-    ],
+    "collectCoverage": true,
     "moduleFileExtensions": [
       "js",
-      "jsx"
+      "mjs"
     ],
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/test/mocks/styleMock.js",
-      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/mocks/fileMock.js"
-    }
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.mjs$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "eslint": "^7.30.0",
@@ -55,6 +52,10 @@
     "jest": "^26.4.2",
     "jest-canvas-mock": "^2.2.0",
     "raw-loader": "^3.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.19.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
@@ -66,6 +67,5 @@
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-merge": "^4.2.2"
-  },
-  "heroku-run-build-script": true
+  }
 }
