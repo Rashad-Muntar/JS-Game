@@ -159,7 +159,6 @@ export class TextStyles {
                 fontSize: TextStyles.SIZE_MED2,
                 color: "#ffffff",
             },
-            shadow: "#000000"
         };
     }
 }
