@@ -1,4 +1,6 @@
 import 'phaser';
+import Button from '../Objects/Button';
+import config from '../Config/config';
 
 let platforms
 let player
@@ -7,6 +9,8 @@ let stars
 let score = 0;
 let scoreText;
 let bombs;
+let gameOver = false
+let gameOverText
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -19,7 +23,12 @@ export default class GameScene extends Phaser.Scene {
 
   create () {
     this.add.image(400, 300, 'sky')
+
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '28px', fill: '#000' });
+    gameOverText = this.add.text(400, 300, 'Game Over', { fontSize: '45px', fill: 'red' });
+    gameOverText.setOrigin(0.5)
+    gameOverText.visible = false
+
     platforms = this.physics.add.staticGroup();
 
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
@@ -27,6 +36,8 @@ export default class GameScene extends Phaser.Scene {
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
 
+    this.gameButton = new Button(this, config.width/2, config.height/2 - 100, 'blueButton1', 'blueButton2', 'Restart', 'Game');
+    this.gameButton.visible = false
     player = this.physics.add.sprite(100, 450, 'dude')
 
     player.setBounce(0.2);
@@ -70,9 +81,7 @@ export default class GameScene extends Phaser.Scene {
   this.physics.add.collider(stars, platforms)
   this.physics.add.overlap(player, stars, this.collectStar, null, this);
 
-  bombs = this.physics.add.group({
-    key: 'bomb'
-  })
+  bombs = this.physics.add.group()
   this.physics.add.collider(bombs, platforms);
   this.physics.add.collider(player, bombs, this.hitBomb, null, this);
   }
@@ -131,6 +140,8 @@ update (){
     player.setTint(0xff0000);
     player.anims.play('turn');
     gameOver = true;
+    gameOverText.visible =true
+    this.gameButton.visible = true
 }
 
 };
