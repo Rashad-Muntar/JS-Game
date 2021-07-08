@@ -3,6 +3,9 @@ import 'phaser';
 let platforms
 let player
 let controlls
+let stars
+let score = 0;
+let scoreText
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -15,7 +18,7 @@ export default class GameScene extends Phaser.Scene {
 
   create () {
     this.add.image(400, 300, 'sky')
-
+    scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '28px', fill: '#000' });
     platforms = this.physics.add.staticGroup();
 
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
@@ -50,6 +53,21 @@ export default class GameScene extends Phaser.Scene {
 
   player.body.setGravityY(300)
   this.physics.add.collider(player, platforms)
+
+  stars = this.physics.add.group({
+    key: 'star',
+    repeat: 11,
+    setXY: { x: 12, y: 0, stepX: 70 }
+  });
+
+  stars.children.iterate(function (child) {
+
+      child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+
+  });
+
+  this.physics.add.collider(stars, platforms)
+  this.physics.add.overlap(player, stars, this.collectStar, null, this);
   }
 
 
@@ -74,6 +92,10 @@ update (){
   {
       player.setVelocityY(-250);
   }
-}
+  }
+
+  collectStar(player, stars){
+      stars.disableBody(true, true);
+  }
 
 };
