@@ -11,6 +11,7 @@ let scoreText;
 let bombs;
 let gameOver = false
 let gameOverText
+let subText
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -22,19 +23,43 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
-    this.add.image(400, 300, 'sky')
+    this.add.image(800, 600, 'sky').setScale(2)
 
+    //cameras setyp
+    this.cameras.main.setBounds(0, 0, 1600, 1200);
+    this.physics.world.bounds.width = 1600
+    this.physics.world.bounds.height = 1200
+
+    // on screeen text setup
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '28px', fill: '#000' });
-    gameOverText = this.add.text(400, 300, 'Game Over', { fontSize: '45px', fill: 'red' });
+    scoreText.setScrollFactor(0)
+    gameOverText = this.add.text(400, 290, 'Game Over', { fontSize: '45px', fill: 'red' });
+    subText = this.add.text(400, 350, 'You have been hit by a bomb. Try again!!', { fontSize: '20px', fill: 'white' });
     gameOverText.setOrigin(0.5)
+    gameOverText.setScrollFactor(0)
+    subText.setOrigin(0.5)
+    subText.setScrollFactor(0)
     gameOverText.visible = false
+    subText.visible = false
 
+    // platforms
     platforms = this.physics.add.staticGroup();
 
-    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    platforms.create(400, 1232, 'ground').setScale(4).refreshBody();
     platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
+
+    platforms.create(50, 600, 'ground');
+    platforms.create(290, 965, 'ground');
+    platforms.create(460, 800, 'ground');
+    platforms.create(750, 600, 'ground');
+    platforms.create(820, 1080, 'ground');
+    platforms.create(1260, 880, 'ground');
+    platforms.create(1290, 450, 'ground');
+    platforms.create(1430, 660, 'ground');
+    platforms.create(1530, 1020, 'ground');
+    platforms.create(1546, 230, 'ground');
 
     this.gameButton = new Button(this, config.width/2, config.height/2 - 100, 'blueButton1', 'blueButton2', 'Restart', 'Game');
     this.gameButton.visible = false
@@ -42,6 +67,7 @@ export default class GameScene extends Phaser.Scene {
 
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
+    this.cameras.main.startFollow(player)
 
     this.anims.create({
       key: 'left',
@@ -141,7 +167,13 @@ update (){
     player.anims.play('turn');
     gameOver = true;
     gameOverText.visible =true
+    subText.visible = true
     this.gameButton.visible = true
+    this.scoreForm
+}
+
+ScoreForm() {
+  this.scene.start('GameOver');
 }
 
 };
