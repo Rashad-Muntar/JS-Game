@@ -2,6 +2,7 @@ import 'phaser';
 
 let platforms
 let player
+let controlls
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -50,5 +51,29 @@ export default class GameScene extends Phaser.Scene {
   player.body.setGravityY(300)
   this.physics.add.collider(player, platforms)
   }
+
+
+update (){
+  controlls = this.input.keyboard.createCursorKeys()
+
+  if(controlls.left.isDown){
+    player.setVelocityX(-160)
+    player.anims.play('left', true)
+  }
+  else if (controlls.right.isDown)
+  {
+      player.setVelocityX(160);
+      player.anims.play('right', true);
+  }
+  else
+  {
+      player.setVelocityX(0);
+      player.anims.play('turn');
+  }
+  if (controlls.up.isDown)
+  {
+      player.setVelocityY(-250);
+  }
+}
 
 };
