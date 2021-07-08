@@ -1,30 +1,32 @@
-// const webpack = require('webpack');
-// const path = require('path');
+'use strict';
 
-// module.exports = {
+const webpack = require('webpack');
+const path = require('path');
 
-//   entry: './src/index.js',
+module.exports = {
 
-//   output: {
-//     path: path.resolve(__dirname, 'build'),
-//     publicPath: '/build/',
-//     filename: 'project.bundle.js',
-//   },
+    entry: './src/index.js',
 
-//   module: {
-//     rules: [
-//       {
-//         test: [/\.vert$/, /\.frag$/],
-//         use: 'raw-loader',
-//       },
-//     ],
-//   },
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/build/',
+        filename: 'project.bundle.js'
+    },
 
-//   plugins: [
-//     new webpack.DefinePlugin({
-//       CANVAS_RENDERER: JSON.stringify(true),
-//       WEBGL_RENDERER: JSON.stringify(true),
-//     }),
-//   ],
+    module: {
+        rules: [
+          {
+            test: [ /\.vert$/, /\.frag$/ ],
+            use: 'raw-loader'
+          }
+        ]
+    },
 
-// };
+    plugins: [
+        new webpack.DefinePlugin({
+            'CANVAS_RENDERER': JSON.stringify(true),
+            'WEBGL_RENDERER': JSON.stringify(true)
+        })
+    ]
+
+};
