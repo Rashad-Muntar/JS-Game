@@ -7,13 +7,13 @@ export default class FormScene extends Phaser.Scene {
     super('FormScene');
   }
 
-  preload () {
-    this.load.image('back', 'assets/panelBack.png')
+  preload() {
+    this.load.image('back', 'assets/panelBack.png');
   }
 
   create() {
     const bg = this.add.image(0, 0, 'sky');
-    this.add.image(400, 300, 'back')
+    this.add.image(400, 300, 'back');
     bg.displayHeight = config.height;
     bg.displayWidth = config.width;
     bg.y = config.height / 2;
@@ -43,7 +43,7 @@ export default class FormScene extends Phaser.Scene {
     const fields = this.add.dom(config.width / 2.7, 250, div);
     container.appendChild(div);
     fields.addListener('click');
-    
+
     fields.on('click', (e) => {
       const playerName = document.getElementById('playerName');
       if (e.target.matches('#submit') && inputValidator(playerName) === true) {
