@@ -1,6 +1,6 @@
 import 'phaser';
-import Button from '../Objects/Button';
-import config from '../Config/config';
+import LocalStorage from '../API/localStorage';
+
 
 let platforms
 let player
@@ -10,8 +10,7 @@ let score = 0;
 let scoreText;
 let bombs;
 let gameOver = false
-let gameOverText
-let subText
+
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -33,14 +32,7 @@ export default class GameScene extends Phaser.Scene {
     // on screeen text setup
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '28px', fill: '#000' });
     scoreText.setScrollFactor(0)
-    gameOverText = this.add.text(400, 290, 'Game Over', { fontSize: '45px', fill: 'red' });
-    subText = this.add.text(400, 350, 'You have been hit by a bomb. Try again!!', { fontSize: '20px', fill: 'white' });
-    gameOverText.setOrigin(0.5)
-    gameOverText.setScrollFactor(0)
-    subText.setOrigin(0.5)
-    subText.setScrollFactor(0)
-    gameOverText.visible = false
-    subText.visible = false
+  
 
     // platforms
     platforms = this.physics.add.staticGroup();
@@ -61,8 +53,7 @@ export default class GameScene extends Phaser.Scene {
     platforms.create(1530, 1020, 'ground');
     platforms.create(1546, 230, 'ground');
 
-    this.gameButton = new Button(this, config.width/2, config.height/2 - 100, 'blueButton1', 'blueButton2', 'Restart', 'Game');
-    this.gameButton.visible = false
+  
     player = this.physics.add.sprite(100, 450, 'dude')
 
     player.setBounce(0.2);
@@ -165,15 +156,15 @@ update (){
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');
-    gameOver = true;
-    gameOverText.visible =true
-    subText.visible = true
-    this.gameButton.visible = true
-    this.scoreForm
+    this.ScoreForm();
+    LocalStorage.saveScore(score)
 }
 
 ScoreForm() {
+  // const playerName = localStorage.getItem('playerName');
+  // this.data = uploadGameData(playerName, this.score);
   this.scene.start('GameOver');
+  
 }
 
 };
