@@ -14,16 +14,16 @@ export default class GameOverScene extends Phaser.Scene {
 
     preload () {
       
-      this.load.image('back', 'assets/sky2.jpg')
+      this.load.image('bg', 'assets/sky2.jpg')
     }
 
     create () {
       this.add.image(800, 600, 'sky').setScale(2)
-      this.add.image(400, 300, 'back')
+      this.add.image(400, 300, 'bg')
 
       this.title = this.add.text(400, 120, 'Game Over', {
         font: '50px monospace',
-        fill: '#bbb',
+        fill: 'red',
       });
       this.title.setOrigin(0.5, 0.5);
   
@@ -32,7 +32,7 @@ export default class GameOverScene extends Phaser.Scene {
   
       this.score = this.add.text(400, 200, `Your score is: ${score}`, {
         font: '35px monospace',
-        fill: '#888',
+        fill: 'white',
       });
       this.score.setOrigin(0.5, 0.5);
   

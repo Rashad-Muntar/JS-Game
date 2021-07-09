@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "start": "npm run build && webpack-dev-server --port=8000"
+    "start": "npm run build && webpack-dev-server --port=8000",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,33 @@
   },
   "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
   "devDependencies": {
-    "webpack-dev-server": "^2.11.0",
-    "webpack": "^3.4.1",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.6",
+    "phaser": "^3.3.0",
     "raw-loader": "^0.5.1",
-    "phaser": "^3.3.0"
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.19.0",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.mjs$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   }
 }
