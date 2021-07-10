@@ -1,6 +1,5 @@
 import 'phaser';
 import LocalStorage from '../API/localStorage';
-
 let platforms;
 let player;
 let controlls;

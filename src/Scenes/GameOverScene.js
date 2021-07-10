@@ -1,6 +1,8 @@
 import 'phaser';
 import Dom from '../API/dom';
 import LocalStorage from '../API/localStorage';
+import bg from '../assets/sky2.jpg'
+
 
 let gameOverText;
 let subText;
@@ -10,7 +12,7 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('bg', 'assets/sky2.jpg');
+    this.load.image('bg', bg);
   }
 
   create() {
