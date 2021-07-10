@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions, func-names */
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -23,6 +22,10 @@ module.exports = {
       {
         test: /\.(gif|png|mp3|jpe?g|svg|xml)$/i,
         use: 'file-loader',
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
