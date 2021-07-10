@@ -1,49 +1,95 @@
-# Phaser 3 Webpack Project Template
+# Shinobi Run
+[Capstone  Project]
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+### Snapshot
 
-This has been updated for Phaser 3.50.0 version and above.
+## Welcome Page
+![11](https://user-images.githubusercontent.com/58520480/125168143-712abb00-e193-11eb-9273-cbb78beb25a5.png)
 
-Loading images via JavaScript module `import` is also supported, although not recommended.
+## Option Page
+![12](https://user-images.githubusercontent.com/58520480/125168176-9ae3e200-e193-11eb-87de-b5cb7ca21fa8.png)
 
-## Requirements
+## Game Over
+![14](https://user-images.githubusercontent.com/58520480/125168192-b4852980-e193-11eb-8851-4e78a60cb721.png)
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+## ScoreBoard
+![Screenshot from 2021-07-10 15-07-56](https://user-images.githubusercontent.com/58520480/125168218-dbdbf680-e193-11eb-8e03-3ba280cf7644.png)
 
-## Available Commands
+## Main Scene
+![13](https://user-images.githubusercontent.com/58520480/125167676-450e3a80-e191-11eb-9adb-0ab325d1c4ce.png)
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+### Introduction.
 
-## Writing Code
+This project is one of many Javascript project to be completed by [Microverse](https://www.microverse.org/) students.
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+### How to play
 
-## Customizing the Template
+At the start of the game, the player enters his name. The player is then redirected to the game menu, the player can click play or any of the options provided. The player will be taken to the game main scene if the play button is clicked where there are platforms which is arranged randomely. The player needs to consume all the star on the platforms by jumping and and walking. Player can move the playing character by using the Down, Up, Left and Right keys on the keyboard. The player will need to avoid all bouncing bombs which will increase in number anytime the player is able to consume all the stars on the platforms.
 
-### Babel
+### Project Objectives
 
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+[Here](https://www.notion.so/Platform-game-4a55a7d1fcc245bcb012c76814764712)
 
- ```
-"browsers": [
-  ">0.25%",
-  "not ie 11",
-  "not op_mini all"
-]
- ```
+### Project Objectives
 
-### Webpack
+The first 2 days was exploring Phaser.js framework through tutorials and readings. Following by sourcing for sprites and images on [openart](https://opengameart.org/). I wanted simple game mechanics to give players the perception of endless running by panning the camera instead having random spawning moving platforms across the screen. To accummulate points, player will need to collect start worth 10 points and avoid the bombs. For that I had to stretch sky background image several times to achieve a long stage.
 
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+#### Built with
 
-## Deploying Code
+- JavaScript
+- HMTL
+- PHASER 3 JS
+- npm
+- webpack
+- Jest
 
-After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+#### Live Demo
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+[Live](https://upbeat-colden-0068d7.netlify.app/)
+
+#### To play locally
+
+Clone repo 
+```
+$ https://github.com/Rashad-Muntar/JS-Game.git
+```
+
+Change directory, install dependencies and start playing
+
+runc `$ npm intall` to install all dependencies
+run `$ npm start` to start dev server
+
+#### Prerequisites
+Web browser like Chrome, Mozilla or similar.
+
+### Github Repo
+https://github.com/Rashad-Muntar/JS-Game.git
+
+
+and many more.....
+
+👤 **Author**
+
+- GitHub: [@Rashad-Muntar](https://github.com/Rashad-Muntar)
+- Twitter - [@RashadToure](https://twitter.com/RashadToure)
+- LinkedIn: [Rashad Muntar](https://www.linkedin.com/in/rashad-muntar/)
+
+## 🤝 Contributing
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Rashad-Muntar/JS-Game/issues/new).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](https://github.com/Rashad-Muntar/JS-Game/edit/logic/LICENSE) licensed.
