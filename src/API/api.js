@@ -1,3 +1,5 @@
+import 'regenerator-runtime/runtime';
+
 const api = (() => {
   const key = 'Zl4d7IVkemOTTVg2fUdz';
 
