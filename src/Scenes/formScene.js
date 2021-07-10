@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import config from '../Config/config';
 import { inputValidator, eltBuilder } from '../API/sortResult';
+import back from '../assets/panelBack.png'
 
 export default class FormScene extends Phaser.Scene {
   constructor() {
@@ -8,7 +9,7 @@ export default class FormScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('back', 'assets/panelBack.png');
+    this.load.image('back', back);
   }
 
   create() {

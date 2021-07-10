@@ -1,7 +1,4 @@
 import 'phaser';
-// import Button from '../Objects/Button';
-// import config from '../Config/config';
-// import api from '../API/api'
 import Dom from '../API/dom';
 import LocalStorage from '../API/localStorage';
 
