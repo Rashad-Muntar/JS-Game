@@ -1,6 +1,6 @@
 const fetchCall = (url, params) => params.method + url;
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mdFQJuniXYEZdkJargKX/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4d7IVkemOTTVg2fUdz/scores/';
 
 const params = {
   mode: 'cors',

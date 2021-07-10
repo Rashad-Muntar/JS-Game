@@ -1,11 +1,11 @@
-import * as apiMock from './apiMock';
-import { sortOwls } from '../helpers';
+import * as apiMock from './mock';
+// import { sortOwls } from '../helpers';
 
 describe('valid game created ', () => {
   const response = { result: 'Leaderboard score created correctly.' };
 
   const mockUpload = jest.fn().mockImplementation((url, params, name, scores) => {
-    expect(url).toContain('mdFQJuniXYEZdkJargKX');
+    expect(url).toContain('Zl4d7IVkemOTTVg2fUdz');
 
     params.method = 'POST';
     apiMock.fetchCall(url, params);
@@ -30,17 +30,16 @@ describe('valid game created ', () => {
 
 describe('get the leaderboard from API call', () => {
   const unsorted = apiMock.mockLeaderBoard.result;
-  const sortedBoard = sortOwls(unsorted.slice());
 
   const mockGetRankings = jest.fn().mockImplementation((url, params) => {
-    expect(url).toContain('mdFQJuniXYEZdkJargKX');
+    expect(url).toContain('Zl4d7IVkemOTTVg2fUdz');
 
     params.method = 'GET';
 
     apiMock.fetchCall(url, params);
 
     return Promise.resolve({
-      json: () => Promise.resolve(sortedBoard),
+      json: () => Promise.resolve(unsorted),
     });
   });
 
