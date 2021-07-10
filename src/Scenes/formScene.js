@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import config from '../Config/config';
 import { inputValidator, eltBuilder } from '../API/sortResult';
-import back from '../assets/panelBack.png'
+import back from '../assets/panelBack.png';
 
 export default class FormScene extends Phaser.Scene {
   constructor() {

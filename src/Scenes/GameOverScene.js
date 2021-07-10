@@ -1,11 +1,8 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Dom from '../API/dom';
 import LocalStorage from '../API/localStorage';
-import bg from '../assets/sky2.jpg'
+import bg from '../assets/sky2.jpg';
 
-
-let gameOverText;
-let subText;
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super('GameOver');

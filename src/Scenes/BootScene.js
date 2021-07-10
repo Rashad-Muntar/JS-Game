@@ -1,10 +1,10 @@
-import 'phaser';
-import sky from '../assets/sky.jpg'
-import logo from '../assets/zenva_logo.png'
-import ground from '../assets/ground1.png'
-import star from '../assets/star.png'
-import bomb from '../assets/bomb.png'
-import dude from '../assets/dude.png'
+import Phaser from 'phaser';
+import sky from '../assets/sky.jpg';
+import logo from '../assets/zenva_logo.png';
+import ground from '../assets/ground1.png';
+import star from '../assets/star.png';
+import bomb from '../assets/bomb.png';
+import dude from '../assets/dude.png';
 
 export default class BootScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +12,7 @@ export default class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('sky', sky)
+    this.load.image('sky', sky);
     this.load.image('logo', logo);
     this.load.image('ground', ground);
     this.load.image('star', star);

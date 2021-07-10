@@ -1,10 +1,11 @@
-import 'phaser';
-import blueButton1 from '../assets/ui/blue_button02.png'
-import blueButton2 from  '../assets/ui/blue_button03.png'
-import phaserLogo from '../assets/logo.png'
-import box from '../assets/ui/grey_box.png'
-import checkedBox from '../assets/ui/blue_boxCheckmark.png'
-import bgMusic from '../assets/TownTheme.mp3'
+/* eslint-disable radix */
+import Phaser from 'phaser';
+import blueButton1 from '../assets/ui/blue_button02.png';
+import blueButton2 from '../assets/ui/blue_button03.png';
+import phaserLogo from '../assets/logo.png';
+import box from '../assets/ui/grey_box.png';
+import checkedBox from '../assets/ui/blue_boxCheckmark.png';
+import bgMusic from '../assets/TownTheme.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -96,7 +97,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
   ready() {
     this.scene.start('FormScene');
-    this.readyCount++;
+    this.readyCount += 1;
     if (this.readyCount === 2) {
       this.scene.start('FormScene');
     }

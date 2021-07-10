@@ -3,7 +3,7 @@ const inputValidator = (field) => {
   return !!rex.exec(field.value);
 };
 
-const sortScore = (data) => data.sort((pl1, pl2) => pl2.score - owl2.score);
+const sortScore = (data) => data.sort((pl1, pl2) => pl2.score - pl1.score);
 
 const eltBuilder = (name, attrs, ...children) => {
   const dom = document.createElement(name);

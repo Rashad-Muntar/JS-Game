@@ -1,5 +1,7 @@
-import 'phaser';
+/* eslint-disable class-methods-use-this */
+import Phaser from 'phaser';
 import LocalStorage from '../API/localStorage';
+
 let platforms;
 let player;
 let controlls;
@@ -7,7 +9,6 @@ let stars;
 let score = 0;
 let scoreText;
 let bombs;
-const gameOver = false;
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -135,7 +136,7 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
-  hitBomb(player, bomb) {
+  hitBomb(player) {
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');
