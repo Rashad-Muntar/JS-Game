@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Diegodsha/Flappy-fowl.git"
+    "url": "https://github.com/Rashad-Muntar/JS-Game.git"
   },
-  "author": "Diego Hernandez",
+  "author": "Rashad Muntar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Diegodsha/Flappy-fowl/issues"
+    "url": "https://github.com/Rashad-Muntar/JS-Game/issues"
   },
-  "homepage": "https://github.com/Diegodsha/Flappy-fowl#readme",
+  "homepage": "https://github.com/Rashad-Muntar/JS-Game.git",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
